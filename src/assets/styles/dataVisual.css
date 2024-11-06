@@ -1,0 +1,174 @@
+.data-visual {
+  width: 45vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 12231;
+  color: white;
+  padding: 40px 24px 20px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.data-visual h1 {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.data-visual h2, 
+.data-visual h3, 
+.data-visual h4 {
+  font-weight: 400;
+}
+
+.data-visual .header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  height: fit-content;
+}
+
+.data-visual .header .longlat {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.data-visual .realtime-data, 
+.data-visual .historical-data {
+  flex: 3.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.data-visual .chart {
+  width: 100%;
+  flex-grow: 1;
+  pointer-events: all;
+  margin-top: 12px;
+}
+
+.data-visual label {
+  font-size: 14px;
+  color: lightgray;
+  font-weight: 300;
+  margin: auto 0;
+  width: fit-content;
+}
+
+.data-visual .data-frequency select {
+  background-color: rgba(0, 0, 0, 0.202);
+  color: lightgray;
+  outline: none;
+  border: 1px solid grey;
+  padding: 0.2em;
+  transform: translateY(2px);
+}
+
+.data-visual .data-frequency option {
+  background-color: rgb(0, 0, 0);
+  color: lightgray;
+}
+
+/* Chart text size */
+.chart * {
+  font-size: 8px !important;
+}
+
+/* Popper and arrow styling */
+.custom-popper.rmdp-wrapper,
+.rmdp-container .custom-popper.ep-arrow::after {
+  background-color: rgba(0, 0, 0, 0.385);
+}
+
+.rmdp-container .custom-popper.ep-arrow[direction="bottom"] {
+  border-top: 1px solid rgba(0, 0, 0, 0.945);
+}
+
+.rmdp-container .custom-popper.ep-arrow[direction="top"] {
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+/* Date picker styling */
+.date-picker {
+  display: flex;
+  gap: 8px;
+  justify-items: left;
+}
+
+.date-picker .rmdp-input {
+  background-color: rgba(0, 0, 0, 0.231) !important;
+  border: none;
+  color: white;
+  width: 90px;
+  font-size: 12px;
+  font-family: system-ui, sans-serif;
+  font-weight: 100;
+  padding: 0.2em;
+  text-align: center;
+}
+
+.date-picker .rmdp-shadow {
+  box-shadow: 0 0 25px black;
+}
+
+.date-picker .rmdp-wrapper {
+  color: white;
+  background-color: rgba(112, 112, 112, 0.533) !important;
+  backdrop-filter: blur(10px);
+}
+
+.date-picker .rmdp-wrapper .rmdp-header span {
+  color: white;
+}
+
+.date-picker .rmdp-wrapper .rmdp-arrow {
+  border: solid white;
+  border-width: 0 2px 2px 0;
+}
+
+.date-picker .rmdp-wrapper .rmdp-arrow-container.disabled .rmdp-arrow {
+  border-color: rgb(109, 109, 109);
+}
+
+.date-picker .rmdp-wrapper .rmdp-month-picker,
+.date-picker .rmdp-wrapper .rmdp-day-picker,
+.date-picker .rmdp-wrapper .rmdp-year-picker {
+  color: grey;
+  background-color: rgba(52, 52, 52, 0.842) !important;
+  backdrop-filter: blur(10px);
+}
+
+.date-picker .rmdp-wrapper .rmdp-disabled {
+  color: rgb(82, 82, 82) !important;
+}
+
+.date-picker .rmdp-wrapper .rmdp-today span {
+  background-color: rgb(46, 46, 46);
+}
+
+.date-picker .rmdp-wrapper .rmdp-selected span {
+  color: white;
+  background-color: rgba(255, 0, 221, 0.99) !important;
+}
+
+.date-picker .rmdp-wrapper .rmdp-day:not(.rmdp-disabled, .rmdp-day-hidden) span:hover {
+  background-color: rgb(136, 69, 130) !important;
+}
+
+.date-picker .rmdp-wrapper .rmdp-day, 
+.date-picker .rmdp-wrapper .rmdp-week-day {
+  color: rgb(207, 207, 207) !important;
+}
+
+.date-picker .arrow-date svg {
+  width: 10px;
+}
