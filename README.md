@@ -6,7 +6,8 @@
 
 An interactive web application that visualizes potential energy data across different regions in Indonesia. This project provides real-time mapping and data visualization capabilities to help users understand energy distribution patterns at both provincial and district levels.
 
-![Project Screenshot](screenshot.png)
+![Project Screenshot](docs/screenshot.png)
+![Project Screenshot](docs/screenshot2.png)
 
 ## ✨ Features
 
@@ -67,28 +68,6 @@ An interactive web application that visualizes potential energy data across diff
 │   ├── App.jsx
 │   └── main.jsx
 ```
-
-## Getting Started
-
-1. **Clone the repository**
-   ```bash
-   git clone [repository-url]
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Run development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Build for production**
-   ```bash
-   npm run build
-   ```
 
 ## 📦 Installation & Setup
 
@@ -165,12 +144,12 @@ We welcome contributions! Here's how you can help:
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
+<!-- ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. -->
 
-## 🙏 Acknowledgments
+<!-- ## 🙏 Acknowledgments
 
 - Data provided by [Your Data Source]
 - Map boundaries from [GeoJSON Source]
-- Icons and design inspiration from [Design Source]
+- Icons and design inspiration from [Design Source] -->
