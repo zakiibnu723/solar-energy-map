@@ -3,10 +3,12 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import LeafletMap from './components/leafLetMap/leafletMap';
 import DataVisual from './components/dataVisual/dataVisual';
+import Loading from './components/Loading';
 
 
 function App() {
   const [displayData, setDisplayData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const dataFrequency = useRef('Monthly')
 
 
@@ -20,14 +22,22 @@ function App() {
 
   const fetchData = (path, frequency) => {
     console.log(`Fetching ${frequency} data from ${path}`);
+    setIsLoading(true);
     fetch(`/dataset/${path}_${frequency}.json`)
       .then((response) => response.json())
-      .then((data) => setDisplayData(data))
-      .catch((error) => console.error('Error loading GeoJSON data:', error));
+      .then((data) => {
+        setDisplayData(data);
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error loading GeoJSON data:', error);
+        setIsLoading(false);
+      });
   };
 
   return (
     <div className="App">
+      {isLoading && <Loading />}
       {displayData &&
           <DataVisual 
             displayData={displayData} 

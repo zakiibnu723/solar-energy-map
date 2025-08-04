@@ -42,11 +42,14 @@ An interactive web application that visualizes potential energy data across diff
 
 ### API Services & Data Sources
 - **Map Data:** GeoJSON format for Indonesia's administrative boundaries
-- **Energy Data API:**
-  - Supports Daily, Monthly, and Yearly data aggregation
+- **Energy Data Source:** 
+  - Primary data sourced from [Open-Meteo](https://open-meteo.com/) API
+  - Data aggregated into Daily, Monthly, and Yearly statistics
+  - Processed and stored in structured JSON format
+- **Data Processing:**
+  - Raw weather data aggregated into energy potential calculations
   - Hierarchical structure: Province → District → Detail
-  - JSON-based response format
-  - Endpoint patterns: 
+  - Local JSON storage format: 
     ```
     /dataset/Provinsi/{province_name}/{province_name}_{frequency}.json
     /dataset/Provinsi/{province_name}/{district_name}/{district_name}_{frequency}.json
