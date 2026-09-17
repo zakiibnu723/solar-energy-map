@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Province {
+  id        String     @id @default(uuid())
+  name      String     @unique
+  slug      String     @unique
+  numKab    Int        @default(0)
+  avgGhi    Float      @default(0.0)
+  districts District[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+model District {
+  id        String   @id @default(uuid())
+  name      String
+  slug      String
+  provName  String
+  province  Province @relation(fields: [provName], references: [name], onDelete: Cascade)
+  latitude  Float?
+  longitude Float?
+  avgGhi    Float    @default(0.0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([provName, name])
+  @@index([provName])
+}
+
+model SolarData {
+  id           String   @id @default(uuid())
+  locationType String   // "PROVINCE" | "DISTRICT"
+  locationName String   // e.g. "JAWA BARAT" or "KABUPATEN BANDUNG"
+  provName     String?  // Province reference for quick district filtering
+  frequency    String   // "Daily" | "Monthly" | "Yearly"
+  startDate    String?
+  endDate      String?
+  dataJson     String   // Serialized JSON with { time, shortwave_radiation, diffuse_radiation, direct_normal_irradiance }
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([locationType, locationName, frequency])
+  @@index([locationName, frequency])
+  @@index([provName, frequency])
+}
